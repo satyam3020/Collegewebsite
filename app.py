@@ -23,6 +23,13 @@ else:
     metadata = joblib.load(METADATA_PATH)
     print(f"Model loaded: {metadata['model_name']}")
 
+@app.route('/health', methods=['GET'])
+def health():
+    return jsonify({
+        "status": "ok",
+        "modelLoaded": model is not None
+    })
+
 @app.route('/predict', methods=['POST'])
 def predict():
     if model is None:
