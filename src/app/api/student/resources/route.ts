@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { connectToDatabase } from "@/lib/db";
+import { connectToDatabase } from "@/services/database";
 import { ResourceModel } from "@/lib/models";
 
 export const runtime = "nodejs";
